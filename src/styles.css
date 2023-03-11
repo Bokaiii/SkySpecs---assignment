@@ -1,1 +1,141 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+html, body {
+    height: 100%;
+    margin: 0px;
+    background-color: rgb(225, 230, 235);
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 30%;
+    gap: 0px;
+}
+
+.topbar {
+    display: flex;
+    flex-flow: row;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    gap: 3%;
+    background-color: rgb(242, 245, 247);
+    outline: 2px solid rgb(226, 226, 226);
+}
+
+.icon {
+    align-self: center;
+    justify-self: center;
+    padding: 5px;
+}
+
+.icon-clickable {
+    background-color: transparent;
+    border-radius: 3px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.opacity-70 {
+    opacity: 70%;
+}
+
+.icon-clickable:hover {
+    background-color: rgb(204, 204, 204);
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.list-container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    overflow: scroll;
+    background-color: rgb(255, 255, 255);
+    outline: 1px solid rgb(226, 226, 226);
+}
+
+.filler {
+    flex: 1 1 auto;
+}
+
+.simple-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.ms-1 {
+    margin-left: 10px;
+}
+
+.ms-2 {
+    margin-left: 20px;
+}
+
+.file {
+    display: flex;
+    flex-direction: row;
+    margin-left: 35px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+.file:hover {
+    background-color: rgb(222, 222, 222);
+}
+
+.file > div {
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.file > div > p:first-child {
+    font-size: 14px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.file > div > p:last-child {
+    font-size: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.file-count-label {
+    font-size: 14px;
+    color: gray;
+}

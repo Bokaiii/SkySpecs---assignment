@@ -1,0 +1,22 @@
+<div>
+    <div class="flex-row cursor-pointer" (click)="toggleAccordion()">
+        <fa-icon *ngIf="!hidden; else iconClosed" [icon]="faCaretDown" class="icon"></fa-icon>
+        <fa-icon [icon]="icon" class="icon"></fa-icon>
+        <button class="simple-button mr-auto">{{header}}</button>
+
+        <div class="flex-row" *ngIf="greyFiles > 0">
+            <div class="align-self-center file-count-label">{{greyFiles}}</div>
+            <fa-icon [icon]="faFile" class="icon opacity-70"></fa-icon>
+        </div>
+        <div class="flex-row" *ngIf="yellowFiles > 0">
+            <div class="align-self-center file-count-label">{{yellowFiles}}</div>
+            <fa-icon [icon]="faFile" class="icon" style="color: rgb(225, 180, 62);"></fa-icon>
+        </div>
+    </div>
+
+    <ng-content *ngIf="!hidden"></ng-content>
+</div>
+
+<ng-template #iconClosed>
+    <fa-icon [icon]="faCaretRight" class="icon"></fa-icon>
+</ng-template>

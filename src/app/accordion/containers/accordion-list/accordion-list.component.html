@@ -1,0 +1,48 @@
+<div>
+    <div *ngFor="let site of siteList">
+        <app-accordion [header]="site.name" [icon]="faLocationPin" [greyFiles]="5" [yellowFiles]="1">
+
+            <div class="ms-2 mt-1" *ngFor="let windmill of site?.windmills">
+                <app-accordion [header]="windmill.name" [icon]="faFan" [greyFiles]="2">
+
+                    <div class="ms-2 mt-1" *ngFor="let component of windmill?.components">
+                        <app-accordion [header]="component.name" [icon]="faGears" [greyFiles]="2">
+
+                            <div class="ms-2 mt-1" *ngFor="let envelope of component?.envelopes">
+                                <div class="mt-1" class="file cursor-pointer">
+                                    <fa-icon [icon]="faFileWaveform" class="icon"></fa-icon>
+                                    <div>
+                                        <p>{{envelope.name}}</p>
+                                        <p>{{envelope.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ms-2 mt-1" *ngFor="let subcomponent of component?.components">
+                                <app-accordion [header]="subcomponent.name" [icon]="faGears" [greyFiles]="2">
+
+                                    <div class="ms-2 mt-1" *ngFor="let subsubcomp of subcomponent?.components">
+                                        <app-accordion [header]="subsubcomp.name" [icon]="faGears" [greyFiles]="1">
+
+                                            <div class="mt-1" *ngFor="let envelope of subsubcomp?.envelopes">
+                                                <div class="file cursor-pointer">
+                                                    <fa-icon [icon]="faFileWaveform" class="icon"></fa-icon>
+                                                    <div>
+                                                        <p>{{envelope.name}}</p>
+                                                        <p>{{envelope.description}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </app-accordion>
+                                    </div>
+                                </app-accordion>
+                            </div>
+
+                        </app-accordion>
+                    </div>
+                </app-accordion>
+            </div>
+        </app-accordion>
+    </div>
+
+</div>
